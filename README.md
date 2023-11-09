@@ -9,12 +9,17 @@ I used a new config file to hold the parameters and that config file is called b
 comment out ONE line to remove all of the KUSBA parameters.
 There is an "inputShaperKUSBA.cfg" file in the repository. Just copy that into the configuration folder. Using Fluidd - the same
 place that the printer.cfg is.
-In the printer.cfg just add a line at the top where any otehr includes are listed:
+In the printer.cfg just add a line at the top where any other includes are listed:
 
 #[include inputShaperKUSBA.cfg]     # Uncomment if you want to run an InputShaper Calibration
 
 Now you only need to uncomment that line when you intend to use the KUSBA Accelerometer.
-Plug it in, then edit the prointer.cfg and restart Klipper.
+
+I also removed any other entries to do with Accelerometers. Loom into the KUSBA config file to see what they look like and
+then look through the printer.cfg and remove fields of those same names/layouts.
+eg [adxl1345] and [resonance_tester] and [MCU ADXL]
+
+Then plug in the KUSBA and restart Klipper.
 
 Once Klipper is running you can use these commands at the console:
 
@@ -31,7 +36,7 @@ SHAPER_CALIBRATE AXIS=X
 SHAPER_CALIBRATE AXIS=Y
 
 
-You could find that Accelerometer_Query does NOT work. That is fine, as it is not really needed anyway.
+You could find that ACCELEROMETER_QUERY does NOT work. That is fine, as it is not really needed anyway.
 Run  MEASURE_AXES_NOISE   and you will see results from that. They are not too important either, but at least show you it is working.
 
 I have just settled for the   SHAPER_CALIBRATE AXIS=X   or   AXIS=Y   to do the task.
