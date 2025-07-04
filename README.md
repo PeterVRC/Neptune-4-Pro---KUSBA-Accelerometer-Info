@@ -3,8 +3,8 @@ Neptune 4 Pro - KUSBA Accelerometer use
 
 The KUSBA USB Accelerometer can be bought with Klipper firmware already installed into it. I chose the "Anchor Rampon" Firmware version.
 It can just be plugged into the Neptune 4 Pro USB port and then only needs minimal configuration changes for it to be used.
-The configuration changes tell Klipper that it exists and then it MUST be there or Klipepr will fail with an error. Thi smeans you
-really need to remove the configuration oinformation when it is not being used. There is a way to do this in a very quick and easy manner.
+The configuration changes tell Klipper that it exists and then it MUST be there or Klipper will fail with an error. This means you
+really need to remove the configuration information when it is not being used. There is a way to do this in a very quick and easy manner.
 I used a new config file to hold the parameters and that config file is called by the printer.cfg   That means you only need to
 comment out ONE line to remove all of the KUSBA parameters.
 There is an "inputShaperKUSBA.cfg" file in the repository. Just copy that into the configuration folder. Using Fluidd - the same
@@ -37,7 +37,7 @@ SHAPER_CALIBRATE AXIS=Y
 
 
 You could find that ACCELEROMETER_QUERY does NOT work. That is fine, as it is not really needed anyway.
-Run  MEASURE_AXES_NOISE   and you will see results from that. They are not too important either, but at least show you it is working.
+Run  MEASURE_AXES_NOISE   and you will see results from that. They are not too important either, but at least shows you it is working.
 
 I have just settled for the   SHAPER_CALIBRATE AXIS=X   or   AXIS=Y   to do the task.
 These are fully automatic and will do the tests and then save the results to the printer.cfg
